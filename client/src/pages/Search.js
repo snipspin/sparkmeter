@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom'
 import BackButton from '../components/BackButton'
+import Yes from '../img/Yes button.png';
 
 const shoppingItems = [
   {name: "Dryer",   brand: "No Name1",  image: "http://placekitten.com/200/200",  price: "800"},
@@ -17,14 +18,16 @@ function Search(props) {
   const selectItemHandler = (e, data) => {
     e.preventDefault()
     props.setSelectedItem(data)
+    
+    e.target.className=(e.target.className == "choices")? "choicesChosen" : "choices"
   }
 
   useEffect(() => {
     if (searchTerm.length >= 0) {
       // start searching
       setPrimaryResult(
-        <div>
-          <h3>Are you thinking about this?</h3>
+        <div className="center">
+          <h3 className="survques">Are you thinking about this?</h3>
         
           <div className="pribox">
             <img src={shoppingItems[0].image} className="firstpic"/>
@@ -38,8 +41,8 @@ function Search(props) {
         </div>
       )
       setSecondaryResults(
-        <div>
-          <h3>Or maybe one of those</h3>
+        <div className="center">
+          <h3 className="survques">Or maybe one of those?</h3>
           <div className="choices" onClick={(e)=>{selectItemHandler(e,shoppingItems[1])}}>
             <img src={shoppingItems[1].image} className="choicepic"/>
             <div className="desc">
@@ -76,7 +79,7 @@ function Search(props) {
   const renderButton = () => {
     return (
       <Link to ='/results'>
-        <input type="button" name="submit" className="submitbtn" value="Yes" />
+        <img src={Yes} />
       </Link>
     )
   }
@@ -90,7 +93,8 @@ function Search(props) {
           <div className="back">
             <BackButton path="/survey"/>  
           </div>
-          <div className="seachbar">
+          <div className="searchbar">
+            <p>What are you thinking of buying?</p>
             <input type="text" placeholder="Search" onChange={(e)=>{onChangeHandler(e)}} />
           </div>
           <div className="priresults">
@@ -98,6 +102,9 @@ function Search(props) {
           </div>
           <div className="secresults">
             {secondaryResults}
+            <h3 className="white"> Not any of these? See more -></h3>
+          </div>
+          <div className="yesbtn">
             {goToResults}
           </div>
         </div>

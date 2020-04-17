@@ -27,7 +27,7 @@
 
 }
 .back {
-  margin: 25px 5px;
+  margin: 25px 5px 10px 8px;
 }
 .surveyhead {
   display: flex;
@@ -46,7 +46,7 @@
 .survques {
   color: white;
   font-size: 20px;
-  font-weight: bold;
+  /* font-weight: bold; */
   margin: 15px;
 }
 .criteria {
@@ -137,12 +137,12 @@ a {
 .pribox {
   display: flex;
   justify-content: space-around;
-  border: 1px solid black;
-  /* align-items: center; */
-  /* padding: 20px; */
+  margin-bottom: 30px;
 }
 .desc2 {
-  padding-top: 25px;
+  padding-right: 15px;
+  text-align: left;
+  font-weight: bold;
 }
 .choices {
   display: flex;
@@ -151,15 +151,77 @@ a {
   justify-content: space-around;
 }
 .choicepic {
-  height: 70px;
-  width: 70px;
-  margin: 0px 20px;
+  height: 50px;
+  width: 50px;
 }
 .desc {
   background-color: #f4f4f4;
+
 }
 .firstpic {
-  height: 120px;
-  width: 120px;
-  padding: 25px;
+  height: 85px;
+  width: 85px;
+  padding: 0px 25px;
+}
+.center {
+  text-align: center;
+}
+.secresults {
+  text-align: center;
+}
+.searchbar {
+  text-align: center;
+}
+.p {
+  padding: 0px;
+  margin: 0px;
+}
+input[type="text"] {
+  width: 75%;
+  height: 30px;
+  background-color: white;
+}
+.white {
+  margin: 30px;
+  font-size: 14px;
+  font-weight: 1;
+  color: white;
+}
+.yesbtn {
+  text-align: center;
+}
+.choicesChosen {
+  background-color:#F9C589;
+}
+.results {
+  height: 100vh;
+  /* width: 100vh; */
+  background-color: white;
+}
+.sparkresult {
+  background-color: white;
+  margin: auto;
+  border: 1px solid black;
+  text-align: center;
+}
+.results2 {
+  background-color: white;
+}
+.meter {
+  display: flex;
+  background-color: white;
+  margin: auto;
+  width: 50%;
+}
+.bckgrndcolor {
+  background: white;
+}
+.metback {
+  background-color: white;
+}
+.arrow {
+  position: absolute;
+  z-index: 5;
+  background-color: transparent;
+  margin-left: 70px;
 }

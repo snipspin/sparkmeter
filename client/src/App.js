@@ -32,7 +32,9 @@ import SportsNB from './img/SportsNB.png'
 function App() {
   // local storage item
   const [surveyData, setSurveyData] = useState()
-  const [selectedItem, setSelectedItem] = useState()
+  const [selectedItem, setSelectedItem] = useState(
+    {name: "Dryer3",  brand: "No Name3",  image: "http://placekitten.com/200/200",  price: "850"}
+  )
     // [
     // {question: "High durability?", rating: 0},
     // {question: "Low price", rating: 0},
