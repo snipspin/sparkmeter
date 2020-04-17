@@ -138,7 +138,11 @@ a {
   display: flex;
   justify-content: space-around;
   border: 1px solid black;
+  /* align-items: center; */
   /* padding: 20px; */
+}
+.desc2 {
+  padding-top: 25px;
 }
 .choices {
   display: flex;
