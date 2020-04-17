@@ -26,7 +26,6 @@ let amazonData = `[{"comfort": 1,
 {"comfort": 1, "material_and_stitching": 1, "durability": 0.5, "fit": 0, "ease_of_returns": 0.5, "as_described": 1, "customer_service": 0.5, "color": 0.5, "name": "Keds Women\'s Moxie Mule Washed Twill Slip On Sneaker", "image": "https://images-na.ssl-images-amazon.com/images/I/71T3e4BxLEL._AC_UX500_.jpg", "brand": "Keds", "price": 49.88}
 ]`
 
-console.log(JSON.parse(amazonData))
 const shoppingItems = JSON.parse(amazonData)
 function Search(props) {
   const [searchTerm, setSearchTerm] = useState("")

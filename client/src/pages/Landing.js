@@ -1,7 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Background from '../img/cropbg.png';
-import Logo from '../img/Logo.png'
 
   function Landing() {
     return(

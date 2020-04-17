@@ -9,14 +9,12 @@ import Arrow from '../img/Meter Arrow.png'
     useEffect(()=> {
       setArrowRotation((result)? 45 : -45)
     }, [])
-    //console.log(props.selectedItem)
-    //console.log(props.selectedItem.name)
-    let name = "Dryer3"
+    // let name = "Dryer3"
     let rotation = {
       transform:`rotate(${arrowRotation}deg)`,
       transformOrigin: "bottom"
     }
-    let result = (props.selectedItem.fit == 1)? false : true
+    let result = (props.selectedItem.fit === 1)? false : true
     
     let getThatItemText = (result)? ("YES! Get that item!"): ("NO! Don't get that item!")
     
@@ -33,7 +31,6 @@ import Arrow from '../img/Meter Arrow.png'
           <h2 className="wordresult">{getThatItemText}</h2>
           <p className="selecteditemname">{props.selectedItem.name}</p>
           <img className="endpic" src={props.selectedItem.image}/>
-          {/* {props.selectedItem.name} */}
           <NewSearchButton />
         </div>
       </div>
