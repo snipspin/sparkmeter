@@ -195,23 +195,23 @@ input[type="text"] {
 }
 .results {
   height: 100vh;
-  /* width: 100vh; */
+  padding: 20px;
   background-color: white;
 }
 .sparkresult {
   background-color: white;
-  margin: auto;
-  border: 1px solid black;
+  margin: 20px auto;
   text-align: center;
 }
 .results2 {
   background-color: white;
+  text-align: center;
 }
 .meter {
   display: flex;
   background-color: white;
   margin: auto;
-  width: 50%;
+  width: 60%;
 }
 .bckgrndcolor {
   background: white;
@@ -224,4 +224,21 @@ input[type="text"] {
   z-index: 5;
   background-color: transparent;
   margin-left: 70px;
+}
+.wordresult {
+  background-color: white;
+  text-decoration: underline#8FC0D5;
+}
+.endpic {
+  background-color: white;
+  height: 270px;
+  width: 270px;
+}
+.endbtn {
+  background-color: white;
+  margin: 5px;
+}
+.selecteditemname {
+  background-color: white;
+  font-weight: bold;
 }

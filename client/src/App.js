@@ -33,7 +33,7 @@ function App() {
   // local storage item
   const [surveyData, setSurveyData] = useState()
   const [selectedItem, setSelectedItem] = useState(
-    {name: "Dryer3",  brand: "No Name3",  image: "http://placekitten.com/200/200",  price: "850"}
+    {name: "Dryer3",  brand: "No Name3",  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ689SI11eXmaBd_RY4ANNrgLrxT5V5XqmyzqCdRGXnnc4aII9F&usqp=CAU",  price: "850"}
   )
     // [
     // {question: "High durability?", rating: 0},

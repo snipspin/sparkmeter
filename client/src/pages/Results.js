@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import NewSearchButton from '../components/NewSearchButton'
 import Meter from '../img/Meter Background.png'
 import Arrow from '../img/Meter Arrow.png'
 
   function Results(props) {
+    const [arrowRotation, setArrowRotation] = useState(0)
+
+    useEffect(()=> {
+      setArrowRotation((result)? 45 : -45)
+    }, [])
     //console.log(props.selectedItem)
     //console.log(props.selectedItem.name)
     let name = "Dryer3"
     let rotation = {
-      transform:"rotate(45deg)",
+      transform:`rotate(${arrowRotation}deg)`,
       transformOrigin: "bottom"
     }
+    let result = (props.selectedItem.fit == 1)? false : true
+    
+    let getThatItemText = (result)? ("YES! Get that item!"): ("NO! Don't get that item!")
+    
     return(
       <div className="results">
         <div className="sparkresult">
@@ -21,9 +30,9 @@ import Arrow from '../img/Meter Arrow.png'
           </div>
         </div>  
         <div className="results2">
-          <h2 className="bckgrndcolor">YES! Get that</h2>
-          <p className="bckgrndcolor">{props.selectedItem.name}</p>
-          <img className="bckgrndcolor" src={props.selectedItem.image}/>
+          <h2 className="wordresult">{getThatItemText}</h2>
+          <p className="selecteditemname">{props.selectedItem.name}</p>
+          <img className="endpic" src={props.selectedItem.image}/>
           {/* {props.selectedItem.name} */}
           <NewSearchButton />
         </div>
