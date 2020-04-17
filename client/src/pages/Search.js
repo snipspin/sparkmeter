@@ -27,7 +27,7 @@ function Search(props) {
           <h3>Are you thinking about this?</h3>
         
           <div className="pribox">
-            <img src={shoppingItems[0].image} />
+            <img src={shoppingItems[0].image} className="firstpic"/>
             {shoppingItems[0].brand}
             {shoppingItems[0].name}
             Price: {shoppingItems[0].price}
