@@ -13,7 +13,7 @@ function Content(props) {
             <Route path="/categories" render={() => <Homepage  categories={props.categories}  setActiveCategory={props.setActiveCategory} />} />
             <Route path="/search" render={ () => <Search setSelectedItem={props.setSelectedItem} /> }/>
             <Route path="/results" render={ () => <Results selectedItem={props.selectedItem} /> } />
-            <Route path="/survey" render={ () => <Survey activeCategory={props.activeCategory} surveyData={props.survey} updateSurveyData={props.updateSurveyData} />} />
+            <Route path="/survey" render={ () => <Survey categoryImages={props.categoryImages} activeCategory={props.activeCategory} surveyData={props.survey} updateSurveyData={props.updateSurveyData} />} />
   
          </div>
     )

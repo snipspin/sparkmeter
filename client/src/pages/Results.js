@@ -1,4 +1,5 @@
 import React from 'react'
+import NewSearchButton from '../components/NewSearchButton'
 
   function Results(props) {
     console.log(props.selectedItem)
@@ -6,6 +7,7 @@ import React from 'react'
       <div>
         Results
         {props.selectedItem.name}
+        <NewSearchButton />
       </div>
     )
   }

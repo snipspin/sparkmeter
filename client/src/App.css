@@ -1,39 +1,154 @@
+* {
+  background-color: #8FC0D5;
+}
 .categories {
-  width: 400px;
   height: 100vh;
+  margin: 60px auto;
+  text-align: center;
+
+}
+.catContainer {
+  height: 60vh;
+  width: 270px;;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-top: 50px;
-}
-.eachCatBox {
-  border: 1px solid black;
-  height: 25vh;
-  width: 25vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.catName {
-  position: absolute;
-  z-index: 4;
+  margin: auto;
 }
 .catPic {
   width: 100%;
   height: 100%;
 }
 .survey {
-  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+
+}
+.back {
+  margin: 25px 5px;
+}
+.surveyhead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actcat {
+  font-size: 18px;
+  padding: 10px;
+}
+.survform {
+  text-align: center;
+
+  justify-content: center;
+}
+.survques {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 15px;
 }
 .criteria {
-  width: 40%;
+  width: 100%;
 }
 .eachCrit {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  /* border: 1px solid black; */
 }
 .submitbtn {
+  margin-top: 5px;
+  height: 40px;
+  border: none;
+}
+.font {
+  font-family: poppins;
+  text-decoration: none;
+  color: black;
+  line-height: 100vh;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+.Clothing, .Electronics, .Toys, .Kitchen, .Gardening, .Beauty, .Furniture, .Sports {
+  height: 20vh;
+  width: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+.Clothing {
+  background-image: url('./img/clothing\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+}
+.Electronics {
+  background-image: url('./img/electronics\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Toys {
+  background-image: url('./img/toy\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Kitchen {
+  background-image: url('./img/kitchen\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Gardening {
+  background-image: url('./img/Gardening\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Beauty {
+  background-image: url('./img/Beauty\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Furniture {
+  background-image: url('./img/furniture\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.Sports {
+  background-image: url('./img/sports\ button.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.app {
+  background-color: #8FC0D5;
+}
+.notChosen, .chosen {
+  width: 100%;
+  height: 35px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.notChosen {
+  background-color: #F4F4F4;
+}
+.chosen {
+  background-color: #F9C589;
+}
+.pribox {
+  display: flex;
   border: 1px solid black;
-  margin: auto;
+}
+.choices {
+  display: flex;
+  background-color: #f4f4f4;
+  border: 2px solid lightgray;
+  justify-content: space-around;
+}
+.choicepic {
+  height: 70px;
+  width: 70px;
+  margin: 0px 20px;
+}
+.desc {
+  background-color: #f4f4f4;
 }

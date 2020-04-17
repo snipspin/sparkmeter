@@ -1,22 +1,28 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Categories(props) {
-    
+  let history = useHistory()
+    const clickHandler = (e, category) => {
+      e.preventDefault()
+      props.setActiveCategory(category)
+      history.push("/survey")
+    } 
     let categoryList = props.categories.map((category, i) => {
         return (
-            <div className="eachCatBox" key={i}>
-                <Link to ='/survey' onClick={()=>props.setActiveCategory(category)}>
-                    <h3 className="catName">{category}</h3>
-                    <img src="" className="catPic" alt={i}/>
-                </Link>
+            <div className={category} key={i} onClick={(e)=>clickHandler(e,category)}>
+              
             </div>
         )
     })
 
     return (
+
         <div className="categories">
-            {categoryList}
+            <h3>Choose a Category</h3>
+            <div className="catContainer">
+                {categoryList}
+            </div>
         </div>
     )
 }

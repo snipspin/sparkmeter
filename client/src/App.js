@@ -5,6 +5,15 @@ import Content from "./pages/Content"
 // import Homepage from "./pages/Homepage"
 import './App.css';
 
+import ClothingNB from './img/ClothingNB.png'
+import ElectronicsNB from './img/ElectronicsNB.png'
+import ToysNB from './img/ToysNB.png'
+import KitchenNB from './img/KitchenNB.png'
+import GardeningNB from './img/GardeningNB.png'
+import BeautyNB from './img/BeautyNB.png'
+import FurnitureNB from './img/FurnitureNB.png'
+import SportsNB from './img/SportsNB.png'
+
  // check if survey is filled
  //localStorage.getItem("survey")
  // render survey if not
@@ -37,7 +46,18 @@ function App() {
     // {question: "Machine wash", rating: 0}
 // ]
 // )
-  const categories = ["Clothing", "Electronics", "Automotive", "Kitchen", "Furniture", "Health & Beauty"]
+  const categories = ["Clothing", "Electronics", "Toys", "Kitchen", "Gardening", "Beauty", "Furniture", "Sports"]
+  const categoryImages = {
+    Clothing: ClothingNB,
+    Electronics: ElectronicsNB,
+    Toys: ToysNB,
+    Kitchen: KitchenNB,
+    Gardening: GardeningNB,
+    Beauty: BeautyNB,
+    Furniture: FurnitureNB,
+    Sports: SportsNB,
+
+  }
   const [activeCategory, setActiveCategory] = useState('Clothing')
   useEffect(() => {		
     // localStorage.clear()
@@ -95,17 +115,14 @@ const updateSurveyData = (category, index, rating) => {
   // console.log(surveyData[category][index]["rating"])
 }
 
-
   return (
     <BrowserRouter>
       <div className="App">
-        <Content selectedItem={selectedItem} setSelectedItem={setSelectedItem} updateSurveyData={updateSurveyData} categories={categories} survey={surveyData} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
- 
+        <Content categoryImages={categoryImages} selectedItem={selectedItem} setSelectedItem={setSelectedItem} updateSurveyData={updateSurveyData} categories={categories} survey={surveyData} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+      
       </div>
     </BrowserRouter>
   );
 }
-
-
 
 export default App;

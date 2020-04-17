@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
+import BackButton from '../components/BackButton'
 import Search from './Search'
+import SubmitButton from '../img/Submit button.png'
 
 function Survey(props) {
     const [surveyData, setSurveyData] = useState()
@@ -10,33 +12,25 @@ function Survey(props) {
     }, [props.surveyData])
 
     const handleChange = (event, index) => {
-        // event.preventDefault()
+        event.preventDefault()
         console.log(event.target)
-        // console.log(event.target.checked)
-        // event.target.checked=event.target.checked
-        // props.activeCategory
-        // props.surveyData
         console.log(props.surveyData)
-        // props.surveyData[index]["rating"] = (props.surveyData[index]["rating"] === 0)? 1: 0
-        // props.surveyData[index]["rating"] = !props.surveyData[index]["rating"]
-        // console.log(`${index} ${props.surveyData[index]["question"]} ${props.surveyData[index]["rating"]}`)
-        // props.updateSurveyData(props.activeCategory, props.surveyData)
         console.log((props.surveyData[props.activeCategory][index]["rating"] === 0) ? 1 : 0)
         console.log(props.activeCategory)
         props.updateSurveyData(props.activeCategory, index, (props.surveyData[props.activeCategory][index]["rating"] === 0) ? 1 : 0)
         // event.target.checked=true
-        event.target.checked=(props.surveyData[props.activeCategory][index]["rating"] === 0) ? false : true
+        event.target.className=(props.surveyData[props.activeCategory][index]["rating"] === 0) ? "notChosen" : "chosen"
     }
     let criteriaList = () => {
         console.log("This is running")
         if (typeof(props.surveyData) !== "undefined") {
-            
+            console.log(props.surveyData)
             return props.surveyData[props.activeCategory].map((criteria, i) => {
                 // let checked = (criteria["rating"] === 0) ? false : true
                 return (
                     <div className="criteria" key={i}>
-                        <label><h4>{criteria.question}</h4></label>
-                        <input type="checkbox" onChange={(e)=>handleChange(e,i)} checked={(criteria["rating"] === 0) ? false : true} />
+                        {/* <label><h4>{criteria.question}</h4></label> */}
+                        <button className={(criteria["rating"] === 0) ? "notChosen" : "chosen"} onClick={(e)=>handleChange(e,i)}>{criteria.question} </button>
                     </div>
                 )
             })
@@ -51,15 +45,24 @@ function Survey(props) {
     }
     return(
         <div className="survey">
-            This is the category {props.activeCategory}
-            <form>
-                <h2>Pick the 5 most important criterias for a purchase</h2>
-                    <div className="eachCrit">{criteriaList()}</div>
+            <div className="back">
+                <BackButton path="/categories"/>
+            </div>
+            <div className="surveyhead">
+                <img src={props.categoryImages[props.activeCategory]} />
+                <span className="actcat">{props.activeCategory}</span>
+            </div>
+            <div className="survform">
+                    <span className="survques">What three things are most important to you?</span>
+                <form>
+                        <div className="eachCrit">{criteriaList()}</div>
+                    
+                    <Link to ='/search'>
+                    <button type="submit" name="submit" className="submitbtn" value="Submit"><img src={SubmitButton}/></button>
                 
-                <Link to ='/search'>
-                <input type="button" name="submit" className="submitbtn" value="Submit" />
-                </Link>
-            </form>
+                    </Link>
+                </form>
+            </div>    
         </div>
     )
 }
